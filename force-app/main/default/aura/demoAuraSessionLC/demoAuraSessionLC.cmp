@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="SimpleServerSideController">
+    
+    <aura:attribute name="greeting" type="String" default="Hello"></aura:attribute>
+    <aura:attribute name="tittle" type="String" default="Component"></aura:attribute>
+    <aura:attribute name="recordId" type="String"></aura:attribute>
+    <aura:attribute name="isAManager" type="String"></aura:attribute>
+    
+    <aura:attribute name="accountList" type="Account[]" default="[]" />
+    <aura:attribute name="searchKey" type="String" />
+    
+   <!-- <aura:handler name="init" value="{!this}" action="{!c.init}" /> -->
+
+    <lightning:card title="{!v.isAManager}">
+        <aura:set attribute="actions">
+          <!--  <lightning:button aura:id="button1" label="Change Message" onclick="{!c.changeMessage}"/>
+            <lightning:button aura:id="button2"  label="Change Tittle" onclick="{!c.changeTitle}"/> -->
+
+            <lightning:button aura:id="button3" label="Fetch Accounts" onclick="{!c.callControllerMethod}" class="disabled"/>
+            <lightning:input name="searchKey" placeholder="Enter Search Key" value="{!v.searchKey}"></lightning:input>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <aura:iteration items="{!v.accountList}" var="acc">            
+                Account Name - {!acc.Name} , Industry - {!acc.Industry}
+        	</aura:iteration>
+        </p>
+   </lightning:card>
+
+</aura:component>

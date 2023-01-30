@@ -1,0 +1,3 @@
+<design:component>
+	<design:attribute name="isAManager" label="Is a Manager" datasource="True,False"></design:attribute>
+</design:component>

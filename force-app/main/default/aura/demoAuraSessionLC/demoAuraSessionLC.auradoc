@@ -1,0 +1,6 @@
+<aura:documentation>
+    <aura:description>Simple Documentation for Demo Component</aura:description>
+    <aura:example name="Demo Component with 2 Buttons" ref="c:demoComp" label="Demo Component">
+        This is a simple component with 2 buttons on the card and performs some actions handling the render evetns.
+    </aura:example>
+</aura:documentation>
